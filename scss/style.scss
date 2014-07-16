@@ -5,16 +5,18 @@
 }
 
 h1 {
-	font-size: 1.125rem;
-	font-weight: bold;
+	font-size: 1.5rem;
+	font-weight: 700;
 	color: #212121;
 	margin-top: 25%;
-	margin-bottom: 3rem;
+	margin-bottom: 4rem;
 }
 h1 span {
 	display: block;
-	font-size: .85rem;
+	font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	font-size: 1rem;
 	font-weight: 300;
+	color: #313131;
 	margin-top: .5rem;
 }
 
@@ -31,17 +33,16 @@ thead tr {
 }
 table tr td {
 	min-width: 50px;
-
 }
-span.gridsize {
-	font-size: .875rem;
+div.app {
+
 }
 .input-wrapper {
 	margin: 1.5rem;
 }
 input {
 	border: 0;
-	font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	font-family: 'Roboto Slab', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 	font-size: 2rem;
 	line-height: 2rem;
 	font-weight: 300;
@@ -66,7 +67,10 @@ input:focus {
 :-ms-input-placeholder {
   color: #212121;
 }
-input.basepixel {
+span.custom-root-label {
+	font-size: .875rem;
+}
+input.custom-root {
 	font-size: .875rem;
 	font-weight: 400;
 	line-height: .875rem;
@@ -83,3 +87,31 @@ a:hover {
 	text-decoration: none; 
 	color: #414141;
 }
+
+@media only screen and (max-width: 40em) { 
+	input {
+		width: 100%;
+	}
+	div.table {
+		position: relative;
+		top: 4rem;
+		left: 0;
+		margin-bottom: 2rem;
+	}
+	table {
+		margin: 0 auto;
+	}
+	table tr, table td {
+		font-size: .875rem !important;
+	}
+	table tr td {
+		min-width: 100px;
+	}
+
+	} /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+
+
+
+
+
