@@ -27,11 +27,15 @@ module.exports = function(grunt) {
     },
 
     uglify: {
-      options: {},
+      options: {
+        mangle: false,
+      },
 
-      files: {
-        //'css/pxtoem.css': ['build/pxtoem.css'],
-      }
+      px_to_em: {
+        files: {
+          'js/pxtoem.js': ['bower_components/angular/angular.js', 'src/js/app.js'],
+        }
+      },
     },
 
     watch: {
