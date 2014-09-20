@@ -35,6 +35,12 @@ module.exports = function(grunt) {
         files: {
           'js/pxtoem.js': ['bower_components/angular/angular.js', 'src/js/app.js']
         }
+      },
+
+      modernizr: {
+        files: {
+          'js/modernizr.js': ['bower_components/modernizr/modernizr.js']
+        }
       }
     },
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" ng-app="pxtoemApp">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,9 +8,9 @@
     <link href='//fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:300,700' rel='stylesheet' type='text/css'> 
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="js/modernizr.js"></script>
   </head>
-  <body>
+  <body ng-controller="pxToEmCtl">
 
     <section>
       <div class="app">
@@ -19,7 +19,7 @@
             <h1>pxtoem.io<span>Just a simple px to em Calculator for Webworkers.</span></h1>
 
             <div class="input-wrapper">
-              <input class="custom-px" autofocus placeholder="px">
+                <input class="custom-px" autofocus placeholder="px" value="{{ px }}">
             </div>
 
             <div class="input-wrapper">
@@ -170,12 +170,6 @@
     </div>
 
     
-    
-
-    <!-- 
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/foundation/js/foundation.min.js"></script>
-    <script src="js/app.js"></script>
-    -->
+    <script src="js/pxtoem.js"></script>
   </body>
 </html>
