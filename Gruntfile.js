@@ -11,8 +11,8 @@ module.exports = function(grunt) {
           style: 'compressed',
         },
         files: {
-          'build/app.css': 'scss/app.scss',
-          'build/style.css': 'scss/style.scss',
+          'build/app.css': 'src/scss/app.scss',
+          'build/style.css': 'src/scss/style.scss',
         },        
       },
     },
@@ -26,11 +26,19 @@ module.exports = function(grunt) {
       },
     },
 
+    uglify: {
+      options: {},
+
+      files: {
+        //'css/pxtoem.css': ['build/pxtoem.css'],
+      }
+    },
+
     watch: {
       grunt: { files: ['Gruntfile.js'] },
 
       sass: {
-        files: 'scss/**/*.scss',
+        files: 'src/scss/**/*.scss',
         tasks: ['sass'],
       }
     },
@@ -39,7 +47,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.registerTask('build', ['sass', 'concat']);
+  grunt.registerTask('build', ['sass', 'concat', 'uglify']);
   grunt.registerTask('default', ['build','watch']);
 }
