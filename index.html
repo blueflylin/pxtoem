@@ -16,18 +16,20 @@
       <div class="app">
         <div class="row">
           <div class="large-10 medium-12 small-12 columns large-centered text-center">
-            <h1>pxtoem.io<span>Just a simple px to em Calculator for Webworkers.</span></h1>
+            <h1>pxtoem.io<span>Just a simple px to em calculator for web workers.</span></h1>
 
             <div class="input-wrapper">
-                <input class="custom-px" autofocus placeholder="px" value="{{ px }}">
+                <input class="custom-px" placeholder="px" autofocus ng-model="px" ng-change="pxChange()">
             </div>
 
             <div class="input-wrapper">
-              <input class="custom-em" placeholder="em">
+              <input class="custom-em" placeholder="em" ng-model="em" ng-change="emChange()">
             </div>
 
             <div class="input-wrapper">
-              <span class="custom-root-label">base pixel size: <input class="custom-root" placeholder="16px"></span><i class="fa fa-pencil"></i>
+              <span class="custom-root-label">
+                  base pixel size: <input class="custom-root" ng-model="base" ng-change="baseChange()">px
+              </span><i class="fa fa-pencil"></i>
            </div>
         </div>
       </div>
@@ -44,126 +46,11 @@
         </thead>
 
         <tbody>
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
-          <tr>
-            <td>12px</td>
-            <td>0.875em</td>
-            <td>76,822%</td>
-          </tr> 
+          <tr ng-repeat="pixel in pixels">
+              <td>{{ pixel | number:0 }}</td>
+              <td>{{ pixel / base | number:4}}</td>
+              <td>{{ (pixel / base) * 100 | number:1 }}</td>
+          </tr>
           
         </tbody>
       </table>

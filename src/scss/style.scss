@@ -33,6 +33,7 @@ thead tr {
 }
 table tr td {
 	min-width: 50px;
+    text-align: right !important;
 }
 div.app {
 
@@ -74,7 +75,8 @@ input.custom-root {
 	font-size: .875rem;
 	font-weight: 400;
 	line-height: .875rem;
-	width: 40px;
+    text-align: right;
+	width: 30px;
 }
 i.fa {
 	margin: 0 .25rem 0 .25rem;
@@ -88,7 +90,7 @@ a:hover {
 	color: #414141;
 }
 
-@media only screen and (max-width: 40em) { 
+@media only screen and (max-width: 50em) {
 	input {
 		width: 100%;
 	}
@@ -106,9 +108,10 @@ a:hover {
 	}
 	table tr td {
 		min-width: 100px;
+        text-align: right !important;
 	}
 
-	} /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+} /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 
 
 
