@@ -4,17 +4,17 @@ module.exports = function(grunt) {
 
     sass: {
       options: {
-        loadPath: ['bower_components/foundation/scss'],
+        loadPath: ['bower_components/foundation/scss']
       },
       dist: {
         options: {
-          style: 'compressed',
+          style: 'compressed'
         },
         files: {
           'build/app.css': 'src/scss/app.scss',
-          'build/style.css': 'src/scss/style.scss',
-        },        
-      },
+          'build/style.css': 'src/scss/style.scss'
+        }
+      }
     },
 
     concat: {
@@ -22,20 +22,20 @@ module.exports = function(grunt) {
 
       dist: {
         src: ['build/app.css', 'build/style.css'],
-        dest: 'css/pxtoem.css',
-      },
+        dest: 'css/pxtoem.css'
+      }
     },
 
     uglify: {
       options: {
-        mangle: false,
+        mangle: false
       },
 
       px_to_em: {
         files: {
-          'js/pxtoem.js': ['bower_components/angular/angular.js', 'src/js/app.js'],
+          'js/pxtoem.js': ['bower_components/angular/angular.js', 'src/js/app.js']
         }
-      },
+      }
     },
 
     watch: {
@@ -43,9 +43,9 @@ module.exports = function(grunt) {
 
       sass: {
         files: 'src/scss/**/*.scss',
-        tasks: ['sass'],
+        tasks: ['sass']
       }
-    },
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-sass');
@@ -54,5 +54,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('build', ['sass', 'concat', 'uglify']);
-  grunt.registerTask('default', ['build','watch']);
-}
+  grunt.registerTask('default', ['build']);
+};
