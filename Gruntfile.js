@@ -4,17 +4,26 @@ module.exports = function(grunt) {
 
     sass: {
       options: {
-        includePaths: ['bower_components/foundation/scss']
+        loadPath: ['bower_components/foundation/scss'],
       },
       dist: {
         options: {
-          outputStyle: 'compressed'
+          style: 'compressed',
         },
         files: {
-          'css/app.css': 'scss/app.scss',
-          'css/style.css': 'scss/style.scss'
-        }        
-      }
+          'build/app.css': 'scss/app.scss',
+          'build/style.css': 'scss/style.scss',
+        },        
+      },
+    },
+
+    concat: {
+      options: {},
+
+      dist: {
+        src: ['build/app.css', 'build/style.css'],
+        dest: 'css/pxtoem.css',
+      },
     },
 
     watch: {
@@ -22,14 +31,15 @@ module.exports = function(grunt) {
 
       sass: {
         files: 'scss/**/*.scss',
-        tasks: ['sass']
+        tasks: ['sass'],
       }
-    }
+    },
   });
 
-  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-concat');
 
-  grunt.registerTask('build', ['sass']);
+  grunt.registerTask('build', ['sass', 'concat']);
   grunt.registerTask('default', ['build','watch']);
 }
