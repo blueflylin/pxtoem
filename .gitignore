@@ -1,6 +1,7 @@
 *.DS_Store
 css/
+js/
+build/
 bower_components/
 node_modules/
-build/
 .sass-cache/
