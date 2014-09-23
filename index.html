@@ -19,11 +19,11 @@
             <h1>pxtoem.org<span>Just a simple px to em calculator for web workers.</span></h1>
 
             <div class="input-wrapper">
-                <input class="custom-px" pattern="[0-9]" placeholder="px" autofocus ng-model="px" ng-change="pxChange()" ng-focus="inFocus()">
+                <input class="custom-px" pattern="[0-9]" maxlength="8" placeholder="px" autofocus ng-model="px" ng-change="pxChange()" ng-focus="inFocus()">
             </div>
 
             <div class="input-wrapper">
-              <input class="custom-em" pattern="[0-9]" placeholder="em" ng-model="em" ng-change="emChange()" ng-focus="inFocus()">
+              <input class="custom-em" pattern="[0-9]" maxlength="8" placeholder="em" ng-model="em" ng-change="emChange()" ng-focus="inFocus()">
             </div>
 
             <div class="input-wrapper">
