@@ -50,9 +50,9 @@
 
         <tbody>
           <tr ng-repeat="pixel in pixels">
-              <td>{{ pixel | number:0 }}</td>
-              <td>{{ pixel / base | number:3}}</td>
-              <td>{{ (pixel / base) * 100 | number:1 }}</td>
+              <td>{{ pixel | number:0 }}&nbsp;px</td>
+              <td>{{ pixel / base | number:3}}&nbsp;em</td>
+              <td>{{ (pixel / base) * 100 | number:1 }}&nbsp;%</td>
           </tr>
           
         </tbody>
