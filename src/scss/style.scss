@@ -2,13 +2,15 @@ body {
 	background: #4CCFFD;
 	color: #212121;
 	font-weight: 300;
+	background: url('../img/O14A0456.jpg') center center fixed;
+	background-size: cover;
 }
 
 h1 {
 	font-size: 1.5rem;
 	font-weight: 700;
 	color: #212121;
-	margin-top: 25%;
+	margin-top: 20%;
 	margin-bottom: 4rem;
 }
 h1 span {
@@ -19,7 +21,6 @@ h1 span {
 	color: #313131;
 	margin-top: .5rem;
 }
-
 div.table {
 	position: absolute;
 	top: 40px;
@@ -27,16 +28,15 @@ div.table {
 }
 table {
 	border-collapse: collapse;
+	background: rgba(255,255,255, .6);
+	border:0;
 }
 thead tr {
-	border-bottom: 1px solid #414141;
+	
 }
 table tr td {
 	min-width: 50px;
     text-align: right !important;
-}
-div.app {
-
 }
 .input-wrapper {
 	margin: 1.5rem;
@@ -48,7 +48,9 @@ input {
 	line-height: 2rem;
 	font-weight: 300;
 	color: #212121;
+	max-width: 200px;
 	background: #4CCFFD;
+	background: transparent;
 	padding: .15rem;
 	border-bottom: 1px solid #414141;
 	-webkit-appearance: none;
@@ -76,7 +78,7 @@ input.custom-root {
 	font-weight: 400;
 	line-height: .875rem;
     text-align: right;
-	width: 30px;
+	width: 20px;
 }
 i.fa {
 	margin: 0 .25rem 0 .25rem;
@@ -93,6 +95,7 @@ a:hover {
 @media only screen and (max-width: 50em) {
 	input {
 		width: 100%;
+		max-width: initial;
 	}
 	div.table {
 		position: relative;
