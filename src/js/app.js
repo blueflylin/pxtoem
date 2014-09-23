@@ -7,7 +7,7 @@ pxtoemApp.controller('pxToEmCtl', function($scope, $filter) {
 
     $scope.pxChange = function() {
         $scope.em = $scope.px / $scope.base;
-        $scope.em = $filter('number')($scope.em, 4);
+        $scope.em = $filter('number')($scope.em, 3);
     };
     $scope.emChange = function() {
         $scope.px = $scope.em * $scope.base;
@@ -15,7 +15,7 @@ pxtoemApp.controller('pxToEmCtl', function($scope, $filter) {
     };
     $scope.baseChange = function() {
         $scope.em = $scope.px / $scope.base;
-        $scope.em = $filter('number')($scope.em, 4);
+        $scope.em = $filter('number')($scope.em, 3);
     };
 
     $scope.pixels = [];
