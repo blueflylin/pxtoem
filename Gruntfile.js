@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 
       px_to_em: {
         files: {
-          'js/pxtoem.js': ['bower_components/angular/angular.js', 'src/js/app.js']
+          'js/pxtoem.js': ['bower_components/angular/angular.min.js', 'src/js/app.js']
         }
       },
 
