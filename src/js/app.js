@@ -14,8 +14,21 @@ pxtoemApp.controller('pxToEmCtl', function($scope, $filter) {
         $scope.px = $filter('number')($scope.px, 0);
     };
     $scope.baseChange = function() {
-        $scope.em = $scope.px / $scope.base;
-        $scope.em = $filter('number')($scope.em, 3);
+        newEm = $scope.px / $scope.base;
+
+        if (newEm > 0) {
+            newEm = $filter('number')(newEm, 3);
+            $scope.em = newEm;
+        }
+    };
+
+    $scope.inFocus = function() {
+        $scope.px = '';
+        $scope.em = '';
+    };
+    $scope.baseFocus = function() {
+        $scope.inFocus();
+        $scope.base = '';
     };
 
     $scope.pixels = [];

@@ -22,16 +22,16 @@
             <h1>pxtoem.org<span>Just a simple px to em calculator for web workers.</span></h1>
 
             <div class="input-wrapper">
-                <input class="custom-px" placeholder="px" autofocus ng-model="px" ng-change="pxChange()">
+                <input class="custom-px" placeholder="px" autofocus ng-model="px" ng-change="pxChange()" ng-focus="inFocus()">
             </div>
 
             <div class="input-wrapper">
-              <input class="custom-em" placeholder="em" ng-model="em" ng-change="emChange()">
+              <input class="custom-em" placeholder="em" ng-model="em" ng-change="emChange()" ng-focus="inFocus()">
             </div>
 
             <div class="input-wrapper">
               <span class="custom-root-label">
-                  base pixel size: <input class="custom-root" ng-model="base" ng-change="baseChange()">px
+                  base pixel size: <input class="custom-root" ng-model="base" ng-change="baseChange()" ng-focus="baseFocus()">px
               </span><i class="fa fa-pencil"></i>
            </div>
         </div>
