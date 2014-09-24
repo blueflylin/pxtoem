@@ -5,6 +5,8 @@ pxtoemApp.controller('pxToEmCtl', function($scope, $filter) {
     $scope.em = '';
     $scope.base = 16;
 
+    var baseBackup = $scope.base;
+
     /**
      * Replaces commas with periods or removes both if not desired
      */
@@ -56,7 +58,13 @@ pxtoemApp.controller('pxToEmCtl', function($scope, $filter) {
     };
     $scope.baseFocus = function() {
         $scope.inFocus();
+        baseBackup = $scope.base;
         $scope.base = '';
+    };
+    $scope.baseBlur = function() {
+        if (!$scope.base) {
+            $scope.base = baseBackup;
+        }
     };
 
     $scope.pixels = [];
