@@ -1,13 +1,16 @@
 # PX to EM
 
-Simple px to em calculator.
+Just a simple px to em calculator for webworkers with angular.js. 
 
-- foundation
+Requires: 
+- Zurb Foundation
 - angular.js
+
+View the Demo: [pxtoem.org](http://www.pxtoem.org)
 
 ## Installation
 
-You need npm/bower/grunt.
+You need to install npm/bower/grunt.
 
 * npm install
 * bower install
