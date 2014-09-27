@@ -11,18 +11,8 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'build/app.css': 'src/scss/app.scss',
-          'build/style.css': 'src/scss/style.scss'
+          'css/pxtoem.css': 'src/scss/app.scss',
         }
-      }
-    },
-
-    concat: {
-      options: {},
-
-      dist: {
-        src: ['build/app.css', 'build/style.css'],
-        dest: 'css/pxtoem.css'
       }
     },
 
@@ -59,6 +49,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.registerTask('build', ['sass', 'concat', 'uglify']);
+  grunt.registerTask('build', ['sass', 'uglify']);
   grunt.registerTask('default', ['build']);
 };
