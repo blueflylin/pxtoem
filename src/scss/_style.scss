@@ -1,8 +1,10 @@
 body {
-	background: #4CCFFD;
 	color: #212121;
 	font-weight: 300;
-	background: url('../img/O14A0456.jpg') center center fixed;
+	position: fixed;
+	background: #4CCFFD;
+	background: url('../img/O14A0456.jpg') center center;
+	background-position: center center;
 	background-size: cover;
 }
 h1 {
