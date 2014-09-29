@@ -1,9 +1,9 @@
 body {
 	color: #212121;
 	font-weight: 300;
-	position: fixed;
 	background: #4CCFFD;
-	background: url('../img/O14A0456.jpg') center center;
+	background: url('../img/O14A0456.jpg');
+	background-attachment: fixed;
 	background-position: center center;
 	background-size: cover;
 }
