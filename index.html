@@ -19,16 +19,16 @@
             <h1>pxtoem.org<span>Just a simple px to em calculator for web workers.</span></h1>
 
             <div class="input-wrapper">
-                <input class="custom-px" pattern="[0-9]*" maxlength="8" placeholder="px" autofocus ng-model="px" ng-change="pxChange()" ng-focus="inFocus()">
+                <input type="text" android:inputType="number" class="custom-px" pattern="[0-9]*" maxlength="8" placeholder="px" autofocus ng-model="px" ng-change="pxChange()" ng-focus="inFocus()">
             </div>
 
             <div class="input-wrapper">
-              <input class="custom-em" pattern="[0-9]*" maxlength="8" placeholder="em" ng-model="em" ng-change="emChange()" ng-focus="inFocus()">
+              <input type="text" android:inputType="number" class="custom-em" pattern="[0-9]*" maxlength="8" placeholder="em" ng-model="em" ng-change="emChange()" ng-focus="inFocus()">
             </div>
 
             <div class="input-wrapper">
               <span class="custom-root-label">
-                  base pixel size: <input class="custom-root" pattern="[0-9]*" max-length="2" ng-model="base" ng-change="baseChange()" ng-focus="baseFocus()" ng-blur="baseBlur()"> px
+                  base pixel size: <input type="text" android:inputType="number" class="custom-root" pattern="[0-9]*" max-length="2" ng-model="base" ng-change="baseChange()" ng-focus="baseFocus()" ng-blur="baseBlur()"> px
               </span>
            </div>
         </div>
