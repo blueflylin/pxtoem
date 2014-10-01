@@ -2,7 +2,7 @@ body {
 	color: #212121;
 	font-weight: 300;
 	background: #4CCFFD;
-	background: url('../img/O14A0456.jpg');
+	background: url('../img/O14A0436.jpg');
 	background-attachment: fixed;
 	background-position: center center;
 	background-size: cover;
@@ -42,7 +42,7 @@ table tr td {
 .input-wrapper {
 	margin: 1.5rem;
 }
-input {
+input[type="tel"] {
 	border: 0;
 	font-family: 'Roboto Slab', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 	font-size: 2rem;
@@ -56,11 +56,11 @@ input {
 	border-bottom: 1px solid #414141;
 	-webkit-appearance: none;
 }
-input:focus {
+input[type="tel"]:focus {
 	outline: none;
 }
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+input[type="tel"]::-webkit-outer-spin-button,
+input[type="tel"]::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
@@ -80,7 +80,7 @@ input::-webkit-inner-spin-button {
 span.custom-root-label {
 	font-size: .875rem;
 }
-input.custom-root {
+input[type="tel"].custom-root {
 	font-size: .875rem;
 	font-weight: 400;
 	line-height: .875rem;
@@ -97,7 +97,7 @@ a:hover {
 }
 
 @media only screen and (max-width: 50em) {
-	input {
+	input[type="tel"] {
 		width: 100%;
 		max-width: initial;
 	}
