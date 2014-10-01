@@ -68,7 +68,7 @@ pxtoemApp.controller('pxToEmCtl', function($scope, $filter) {
     };
 
     $scope.pixels = [];
-    for (var i = 6; i <= 36; i++) {
+    for (var i = 8; i <= 36; i++) {
         $scope.pixels.push(i);
     }
     $scope.pixels.push(42);
