@@ -1,76 +1,92 @@
-var pxtoemApp = angular.module('pxtoemApp', []);
+(function(){
 
-pxtoemApp.controller('pxToEmCtl', function($scope, $filter) {
-    $scope.px = '';
-    $scope.em = '';
-    $scope.base = 16;
+var app = angular.module('pxtoemApp', []);
 
-    var baseBackup = $scope.base;
+app.controller('MainController', ['$filter', mainController]);
 
-    /**
-     * Replaces commas with periods or removes both if not desired
-     */
-    function fixCommas() {
-        if (typeof $scope.px === 'string') {
-            $scope.px = $scope.px.replace(',', '');
-            if (typeof $scope.px === 'string') {
-                $scope.px = $scope.px.replace('.', '');
+    function mainController ($filter) {
+
+        var vm = this;
+
+        vm.px = '';
+        vm.em = '';
+        vm.base = 16;
+
+        vm.pxChange = fn_pxChange;
+        vm.emChange = fn_emChange;
+        vm.baseChange = fn_baseChange;
+        vm.inFocus = fn_inFocus;
+        vm.baseFocus = fn_baseFocus;
+        vm.baseBlur = fn_baseBlur;
+        
+        vm.baseBackup = vm.base;
+        vm.pixels = [];
+
+        //Replaces commas with periods or removes both if not desired
+        function fixCommas () {
+            if (typeof vm.px === 'string') {
+                vm.px = vm.px.replace(',', '');
+                if (typeof vm.px === 'string') {
+                    vm.px = vm.px.replace('.', '');
+                }
+            }
+            if (typeof vm.em === 'string') {
+                vm.em = vm.em.replace(',', '.');
+
+            }
+            if (typeof vm.base === 'string') {
+                vm.base = vm.base.replace(',', '');
+                if (typeof vm.base === 'string') {
+                    vm.base = vm.base.replace('.', '');
+                }
             }
         }
-        if (typeof $scope.em === 'string') {
-            $scope.em = $scope.em.replace(',', '.');
 
-        }
-        if (typeof $scope.base === 'string') {
-            $scope.base = $scope.base.replace(',', '');
-            if (typeof $scope.base === 'string') {
-                $scope.base = $scope.base.replace('.', '');
+        function fn_pxChange () {
+            fixCommas();
+
+            vm.em = vm.px / vm.base;
+            vm.em = $filter('number')(vm.em, 3);
+        };
+
+        function fn_emChange () {
+            fixCommas();
+
+            vm.px = vm.em * vm.base;
+            vm.px = $filter('number')(vm.px, 0);
+        };
+        function fn_baseChange () {
+            fixCommas();
+
+            var newEm = vm.px / vm.base;
+
+            if (newEm > 0) {
+                newEm = $filter('number')(newEm, 3);
+                vm.em = newEm;
             }
+        };
+
+        function fn_inFocus () {
+            vm.px = '';
+            vm.em = '';
+        };
+        function fn_baseFocus () {
+            vm.inFocus();
+            baseBackup = vm.base;
+            vm.base = '';
+        };
+        function fn_baseBlur () {
+            if (!vm.base) {
+                vm.base = vm.baseBackup;
+            }
+        };
+
+        
+        for (var i = 8; i <= 36; i++) {
+            vm.pixels.push(i);
         }
-    }
-
-    $scope.pxChange = function() {
-        fixCommas();
-
-        $scope.em = $scope.px / $scope.base;
-        $scope.em = $filter('number')($scope.em, 3);
-    };
-    $scope.emChange = function() {
-        fixCommas();
-
-        $scope.px = $scope.em * $scope.base;
-        $scope.px = $filter('number')($scope.px, 0);
-    };
-    $scope.baseChange = function() {
-        fixCommas();
-
-        var newEm = $scope.px / $scope.base;
-
-        if (newEm > 0) {
-            newEm = $filter('number')(newEm, 3);
-            $scope.em = newEm;
-        }
+        vm.pixels.push(42);
+        vm.pixels.push(48);
     };
 
-    $scope.inFocus = function() {
-        $scope.px = '';
-        $scope.em = '';
-    };
-    $scope.baseFocus = function() {
-        $scope.inFocus();
-        baseBackup = $scope.base;
-        $scope.base = '';
-    };
-    $scope.baseBlur = function() {
-        if (!$scope.base) {
-            $scope.base = baseBackup;
-        }
-    };
-
-    $scope.pixels = [];
-    for (var i = 8; i <= 36; i++) {
-        $scope.pixels.push(i);
-    }
-    $scope.pixels.push(42);
-    $scope.pixels.push(48);
-});
+})();

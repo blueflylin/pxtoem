@@ -11,7 +11,7 @@
     <script src="js/modernizr.js"></script>
   </head>
 
-  <body ng-controller="pxToEmCtl">
+  <body ng-controller="MainController as ctrl" ng-cloak>
 
     <section>
       <div class="app">
@@ -20,16 +20,16 @@
             <h1>pxtoem.org<span>Just a simple px to em calculator for web workers.</span></h1>
 
             <div class="input-wrapper">
-                <input type="tel" class="custom-px" pattern="[0-9]*" maxlength="8" placeholder="px" autofocus ng-model="px" ng-change="pxChange()" ng-focus="inFocus()">
+                <input type="tel" class="custom-px" pattern="[0-9]*" maxlength="8" placeholder="px" autofocus ng-model="ctrl.px" ng-change="ctrl.pxChange()" ng-focus="ctrl.inFocus()">
             </div>
 
             <div class="input-wrapper">
-              <input type="tel" class="custom-em" pattern="[0-9]*" maxlength="8" placeholder="em" ng-model="em" ng-change="emChange()" ng-focus="inFocus()">
+              <input type="tel" class="custom-em" pattern="[0-9]*" maxlength="8" placeholder="em" ng-model="ctrl.em" ng-change="ctrl.emChange()" ng-focus="ctrl.inFocus()">
             </div>
 
             <div class="input-wrapper">
               <span class="custom-root-label">
-                  base pixel size: <input type="tel" class="custom-root" pattern="[0-9]*" max-length="2" ng-model="base" ng-change="baseChange()" ng-focus="baseFocus()" ng-blur="baseBlur()"> px
+                  base pixel size: <input type="tel" class="custom-root" pattern="[0-9]*" max-length="2" ng-model="ctrl.base" ng-change="ctrl.baseChange()" ng-focus="ctrl.baseFocus()" ng-blur="ctrl.baseBlur()"> px
               </span>
            </div>
         </div>
@@ -40,17 +40,18 @@
       <table id="table">
         <thead>
           <tr>
-            <td>Pixels</td>
-            <td>EMs</td> 
-            <td>Percent</td>
+            <th>Pixels</th>
+            <th>EMs</th> 
+            <th>Percent</th>
           </tr>
         </thead>
-
+        
         <tbody>
-          <tr ng-repeat="pixel in pixels">
+          <tr ng-repeat="pixel in ctrl.pixels">
+
               <td>{{ pixel | number:0 }}&nbsp;px</td>
-              <td>{{ pixel / base | number:3}}&nbsp;em</td>
-              <td>{{ (pixel / base) * 100 | number:1 }}&nbsp;%</td>
+              <td>{{ pixel / ctrl.base | number:3}}&nbsp;em</td>
+              <td>{{ (pixel / ctrl.base) * 100 | number:1 }}&nbsp;%</td>
           </tr> 
         </tbody>
       </table>
