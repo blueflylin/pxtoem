@@ -4,7 +4,7 @@
     <link href='//fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:300,700' rel='stylesheet' type='text/css'> 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>px to em calculator - pxtoem.org</title>
+    <title>px to em calculator for pixel to em conversions</title>
     <meta name="description" content="Just a simple px to em calculator for web workers like you and me." />
 
     <link rel="stylesheet" href="css/pxtoem.css" />
@@ -20,11 +20,11 @@
             <h1>pxtoem.org<span>Just a simple px to em calculator for web workers.</span></h1>
 
             <div class="input-wrapper">
-                <input type="tel" class="custom-px" pattern="[0-9]*" maxlength="8" placeholder="px" autofocus ng-model="ctrl.px" ng-change="ctrl.pxChange()" ng-focus="ctrl.inFocus()">
+                <input type="tel" class="custom-px" pattern="[0-9]*" maxlength="6" placeholder="px" autofocus ng-model="ctrl.px" ng-change="ctrl.pxChange()" ng-focus="ctrl.inFocus()">
             </div>
 
             <div class="input-wrapper">
-              <input type="tel" class="custom-em" pattern="[0-9]*" maxlength="8" placeholder="em" ng-model="ctrl.em" ng-change="ctrl.emChange()" ng-focus="ctrl.inFocus()">
+              <input type="tel" class="custom-em" pattern="[0-9]*" maxlength="6" placeholder="em" ng-model="ctrl.em" ng-change="ctrl.emChange()" ng-focus="ctrl.inFocus()">
             </div>
 
             <div class="input-wrapper">
@@ -40,9 +40,9 @@
       <table id="table">
         <thead>
           <tr>
-            <th>Pixels</th>
-            <th>EMs</th> 
-            <th>Percent</th>
+            <th>px</th>
+            <th>em</th> 
+            <th>percent</th>
           </tr>
         </thead>
         
